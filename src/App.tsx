@@ -114,7 +114,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ minHeight: '100vh' }}>
+      <Box sx={{ 
+        minHeight: '100vh',
+        width: '100%'
+      }}>
         <Navigation />
         <HeroSection />
         <AboutSection />
