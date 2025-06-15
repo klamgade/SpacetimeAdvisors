@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   IconButton,
   Divider,
   useTheme,
@@ -48,9 +47,17 @@ const Footer: React.FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: { 
+            xs: '1fr', 
+            sm: 'repeat(2, 1fr)', 
+            md: '2fr 1fr 1.5fr 1.5fr' 
+          }, 
+          gap: 4 
+        }}>
           {/* Company Info */}
-          <Grid item xs={12} md={4}>
+          <Box>
             <Typography
               variant="h5"
               component="h3"
@@ -114,10 +121,10 @@ const Footer: React.FC = () => {
                 <Twitter />
               </IconButton>
             </Box>
-          </Grid>
+          </Box>
 
           {/* Quick Links */}
-          <Grid item xs={12} sm={6} md={2}>
+          <Box>
             <Typography
               variant="h6"
               component="h4"
@@ -155,10 +162,10 @@ const Footer: React.FC = () => {
                 </Box>
               ))}
             </Box>
-          </Grid>
+          </Box>
 
           {/* Services */}
-          <Grid item xs={12} sm={6} md={3}>
+          <Box>
             <Typography
               variant="h6"
               component="h4"
@@ -184,10 +191,10 @@ const Footer: React.FC = () => {
                 </Box>
               ))}
             </Box>
-          </Grid>
+          </Box>
 
           {/* Business Info */}
-          <Grid item xs={12} md={3}>
+          <Box>
             <Typography
               variant="h6"
               component="h4"
@@ -230,85 +237,86 @@ const Footer: React.FC = () => {
               Melbourne VIC 3000<br />
               Australia
             </Typography>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
 
         <Divider sx={{ my: 4, bgcolor: 'rgba(255,255,255,0.2)' }} />
 
         {/* Bottom Footer */}
-        <Grid container justifyContent="space-between" alignItems="center">
-          <Grid item xs={12} md={6}>
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'space-between', 
+          alignItems: { xs: 'center', md: 'center' },
+          gap: { xs: 2, md: 0 }
+        }}>
+          <Typography
+            variant="body2"
+            sx={{
+              color: 'white',
+              opacity: 0.7,
+              textAlign: { xs: 'center', md: 'left' },
+            }}
+          >
+            © {currentYear} Spacetime Advisors. All rights reserved.
+          </Typography>
+          
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 3,
+            }}
+          >
             <Typography
+              component="a"
+              href="#"
               variant="body2"
               sx={{
                 color: 'white',
                 opacity: 0.7,
-                textAlign: { xs: 'center', md: 'left' },
+                textDecoration: 'none',
+                '&:hover': {
+                  opacity: 1,
+                  textDecoration: 'underline',
+                },
               }}
             >
-              © {currentYear} Spacetime Advisors. All rights reserved.
+              Privacy Policy
             </Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Box
+            <Typography
+              component="a"
+              href="#"
+              variant="body2"
               sx={{
-                display: 'flex',
-                justifyContent: { xs: 'center', md: 'flex-end' },
-                gap: 3,
-                mt: { xs: 2, md: 0 },
+                color: 'white',
+                opacity: 0.7,
+                textDecoration: 'none',
+                '&:hover': {
+                  opacity: 1,
+                  textDecoration: 'underline',
+                },
               }}
             >
-              <Typography
-                component="a"
-                href="#"
-                variant="body2"
-                sx={{
-                  color: 'white',
-                  opacity: 0.7,
-                  textDecoration: 'none',
-                  '&:hover': {
-                    opacity: 1,
-                    textDecoration: 'underline',
-                  },
-                }}
-              >
-                Privacy Policy
-              </Typography>
-              <Typography
-                component="a"
-                href="#"
-                variant="body2"
-                sx={{
-                  color: 'white',
-                  opacity: 0.7,
-                  textDecoration: 'none',
-                  '&:hover': {
-                    opacity: 1,
-                    textDecoration: 'underline',
-                  },
-                }}
-              >
-                Terms of Service
-              </Typography>
-              <Typography
-                component="a"
-                href="#"
-                variant="body2"
-                sx={{
-                  color: 'white',
-                  opacity: 0.7,
-                  textDecoration: 'none',
-                  '&:hover': {
-                    opacity: 1,
-                    textDecoration: 'underline',
-                  },
-                }}
-              >
-                Disclaimer
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
+              Terms of Service
+            </Typography>
+            <Typography
+              component="a"
+              href="#"
+              variant="body2"
+              sx={{
+                color: 'white',
+                opacity: 0.7,
+                textDecoration: 'none',
+                '&:hover': {
+                  opacity: 1,
+                  textDecoration: 'underline',
+                },
+              }}
+            >
+              Disclaimer
+            </Typography>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

@@ -4,7 +4,6 @@ import {
   Container,
   Typography,
   Button,
-  Grid,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
@@ -47,135 +46,136 @@ const HeroSection: React.FC = () => {
       }}
     >
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={7}>
-            <Box>
-              <Typography
-                variant="h1"
-                component="h1"
-                sx={{
-                  fontSize: isMobile ? '2.5rem' : '3.5rem',
-                  fontWeight: 700,
-                  mb: 2,
-                  textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                }}
-              >
-                Spacetime Advisors
-              </Typography>
-              
-              <Typography
-                variant="h4"
-                component="h2"
-                sx={{
-                  fontSize: isMobile ? '1.25rem' : '1.5rem',
-                  fontWeight: 400,
-                  mb: 3,
-                  opacity: 0.95,
-                  lineHeight: 1.5,
-                }}
-              >
-                Helping Your Business Stay Compliant and Tax-Clear
-              </Typography>
-              
-              <Typography
-                variant="body1"
-                sx={{
-                  fontSize: isMobile ? '1rem' : '1.125rem',
-                  mb: 4,
-                  opacity: 0.9,
-                  maxWidth: '600px',
-                  lineHeight: 1.6,
-                }}
-              >
-                Professional tax clearance services for small to medium businesses across Australia. 
-                Our registered tax agents ensure your business stays ATO compliant while you focus on growth.
-              </Typography>
-              
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  onClick={scrollToContact}
-                  endIcon={<ArrowForward />}
-                  sx={{
-                    bgcolor: 'white',
-                    color: theme.palette.primary.main,
-                    fontWeight: 600,
-                    px: 4,
-                    py: 1.5,
-                    fontSize: '1.1rem',
-                    '&:hover': {
-                      bgcolor: 'rgba(255,255,255,0.9)',
-                      transform: 'translateY(-2px)',
-                    },
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Book a Consultation
-                </Button>
-                
-                <Button
-                  variant="outlined"
-                  size="large"
-                  href="tel:+61234567890"
-                  startIcon={<Phone />}
-                  sx={{
-                    borderColor: 'white',
-                    color: 'white',
-                    fontWeight: 600,
-                    px: 4,
-                    py: 1.5,
-                    fontSize: '1.1rem',
-                    '&:hover': {
-                      borderColor: 'white',
-                      bgcolor: 'rgba(255,255,255,0.1)',
-                      transform: 'translateY(-2px)',
-                    },
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Call Now
-                </Button>
-              </Box>
-            </Box>
-          </Grid>
-          
-          <Grid item xs={12} md={5}>
-            <Box
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: { xs: '1fr', md: '7fr 5fr' }, 
+          gap: 4, 
+          alignItems: 'center' 
+        }}>
+          <Box>
+            <Typography
+              variant="h1"
+              component="h1"
               sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100%',
+                fontSize: isMobile ? '2.5rem' : '3.5rem',
+                fontWeight: 700,
+                mb: 2,
+                textShadow: '0 2px 4px rgba(0,0,0,0.3)',
               }}
             >
-              {/* Professional illustration/icon */}
-              <Box
+              Spacetime Advisors
+            </Typography>
+            
+            <Typography
+              variant="h4"
+              component="h2"
+              sx={{
+                fontSize: isMobile ? '1.25rem' : '1.5rem',
+                fontWeight: 400,
+                mb: 3,
+                opacity: 0.95,
+                lineHeight: 1.5,
+              }}
+            >
+              Helping Your Business Stay Compliant and Tax-Clear
+            </Typography>
+            
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: isMobile ? '1rem' : '1.125rem',
+                mb: 4,
+                opacity: 0.9,
+                maxWidth: '600px',
+                lineHeight: 1.6,
+              }}
+            >
+              Professional tax clearance services for small to medium businesses across Australia. 
+              Our registered tax agents ensure your business stays ATO compliant while you focus on growth.
+            </Typography>
+            
+            <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+              <Button
+                variant="contained"
+                size="large"
+                onClick={scrollToContact}
+                endIcon={<ArrowForward />}
                 sx={{
-                  width: isMobile ? 200 : 300,
-                  height: isMobile ? 200 : 300,
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.1)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  backdropFilter: 'blur(10px)',
-                  border: '2px solid rgba(255,255,255,0.2)',
+                  bgcolor: 'white',
+                  color: theme.palette.primary.main,
+                  fontWeight: 600,
+                  px: 4,
+                  py: 1.5,
+                  fontSize: '1.1rem',
+                  '&:hover': {
+                    bgcolor: 'rgba(255,255,255,0.9)',
+                    transform: 'translateY(-2px)',
+                  },
+                  transition: 'all 0.3s ease',
                 }}
               >
-                <Typography
-                  variant="h1"
-                  sx={{
-                    fontSize: isMobile ? '4rem' : '6rem',
-                    opacity: 0.7,
-                  }}
-                >
-                  📊
-                </Typography>
-              </Box>
+                Book a Consultation
+              </Button>
+              
+              <Button
+                variant="outlined"
+                size="large"
+                href="tel:+61234567890"
+                startIcon={<Phone />}
+                sx={{
+                  borderColor: 'white',
+                  color: 'white',
+                  fontWeight: 600,
+                  px: 4,
+                  py: 1.5,
+                  fontSize: '1.1rem',
+                  '&:hover': {
+                    borderColor: 'white',
+                    bgcolor: 'rgba(255,255,255,0.1)',
+                    transform: 'translateY(-2px)',
+                  },
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                Call Now
+              </Button>
             </Box>
-          </Grid>
-        </Grid>
+          </Box>
+          
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100%',
+            }}
+          >
+            {/* Professional illustration/icon */}
+            <Box
+              sx={{
+                width: isMobile ? 200 : 300,
+                height: isMobile ? 200 : 300,
+                borderRadius: '50%',
+                background: 'rgba(255,255,255,0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backdropFilter: 'blur(10px)',
+                border: '2px solid rgba(255,255,255,0.2)',
+              }}
+            >
+              <Typography
+                variant="h1"
+                sx={{
+                  fontSize: isMobile ? '4rem' : '6rem',
+                  opacity: 0.7,
+                }}
+              >
+                📊
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
         
         {/* Scroll indicator */}
         <Box
